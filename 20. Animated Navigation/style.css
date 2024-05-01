@@ -45,7 +45,9 @@ nav.active ul {
 nav ul li {
   transform: rotate(0deg);
   opacity: 0;
-  transition: transfrom 0.6s linear, opacity 0.6s linear;
+  transition: transform 0.6s linear, opacity 0.6s linear;  /*---corrected typo error : "transfrom" to "transform" */
+}
+
 }
 
 nav.active ul li {
@@ -78,7 +80,7 @@ nav ul a {
   position: absolute;
   top: 10px;
   left: 5px;
-  transition: transfrom 0.6s linear;
+  transition: transform 0.6s linear; /*---corrected typo error : "transfrom" to "transform" */
 }
 
 .icon .line2 {
@@ -87,9 +89,9 @@ nav ul a {
 }
 
 nav.active .icon .line1 {
-  transform: rotate(-765deg) translateY(5.5px);
+  transform: rotate(-765deg) translateY(5.5px) translateZ(0); /*addition of translateZ(0) it may not have a significant visual effect in this particular case,but it can help optimize the rendering performance, particularly on devices with hardware acceleration support*/
 }
 
 nav.active .icon .line2 {
-  transform: rotate(765deg) translateY(-5.5px);
+  transform: rotate(765deg) translateY(-5.5px) translateZ(0);/*  addition of translateZ(0) it may not have a significant visual effect in this particular case,but it can help optimize the rendering performance, particularly on devices with hardware acceleration support*/
 }
